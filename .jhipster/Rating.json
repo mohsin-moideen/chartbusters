@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rating",
+            "otherEntityName": "review",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "rating"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rating",
+            "otherEntityName": "ratingAttr",
+            "otherEntityRelationshipName": "rating"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ratingValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "reviewCount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "hasReview",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180306164414",
+    "entityTableName": "rating",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "angularJSSuffix": "chartbusters"
+}

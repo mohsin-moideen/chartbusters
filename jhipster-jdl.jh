@@ -1,0 +1,75 @@
+
+entity Product {
+	name String,
+    modelNumber String,
+    manufacturer String,
+    price Double,
+    image String,
+    description String,
+    
+}
+entity Product_Attr {
+	name String,
+    value String,
+}
+entity Rating {
+ 	ratingValue Double,
+    reviewCount Long,
+    hasReview Boolean,
+}
+entity Review {
+	author String,
+    title String,
+    datePublished Instant,
+    reviewBody String,
+}
+entity Category {
+	countryName String
+}
+
+
+entity Rating_Attr {
+	name String,
+    value String,
+}
+
+entity Objective{
+	points Long,
+    description String
+	completed Boolean,
+}
+
+entity UserExtra{
+	points Long,
+    level Long
+    numberOfRatings Long,
+    numberOfReviews Long,
+}
+
+relationship OneToOne{
+	Rating{rating} to Review,
+     Product{product} to Rating
+}
+
+relationship OneToMany {	
+	Category{product} to Product,
+    Rating{rating} to Rating_Attr,
+    Product{product} to Rating_Attr,
+    Product{product} to Product_Attr
+}
+
+relationship ManyToOne{
+	Rating{user} to User
+}
+
+
+// Set pagination options
+paginate Product, Rating with infinite-scroll
+//paginate Job with pagination
+
+//dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Product, Rating
+// Set an angular suffix
+angularSuffix * with chartbusters

@@ -1,0 +1,35 @@
+
+<div *ngIf="product_Attr">
+    <h2><span>Product Attr</span> {{product_Attr.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{product_Attr.name}}</span>
+        </dd>
+        <dt><span>Value</span></dt>
+        <dd>
+            <span>{{product_Attr.value}}</span>
+        </dd>
+        <dt><span>Product</span></dt>
+        <dd>
+            <div *ngIf="product_Attr.product">
+                <a [routerLink]="['/product-chartbusters', product_Attr.product?.id]">{{product_Attr.product?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'product-attr-chartbusters/'+ product_Attr.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

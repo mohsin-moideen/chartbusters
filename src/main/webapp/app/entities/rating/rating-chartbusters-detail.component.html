@@ -1,0 +1,43 @@
+
+<div *ngIf="rating">
+    <h2><span>Rating</span> {{rating.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Rating Value</span></dt>
+        <dd>
+            <span>{{rating.ratingValue}}</span>
+        </dd>
+        <dt><span>Review Count</span></dt>
+        <dd>
+            <span>{{rating.reviewCount}}</span>
+        </dd>
+        <dt><span>Has Review</span></dt>
+        <dd>
+            <span>{{rating.hasReview}}</span>
+        </dd>
+        <dt><span>Rating</span></dt>
+        <dd>
+            <div *ngIf="rating.rating">
+                <a [routerLink]="['/review-chartbusters', rating.rating?.id]">{{rating.rating?.id}}</a>
+            </div>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{rating.user?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rating-chartbusters/'+ rating.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

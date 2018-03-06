@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "points",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numberOfRatings",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numberOfReviews",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180306164419",
+    "entityTableName": "user_extra",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "chartbusters"
+}

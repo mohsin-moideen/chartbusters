@@ -1,0 +1,37 @@
+
+<div *ngIf="userExtra">
+    <h2><span>User Extra</span> {{userExtra.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Points</span></dt>
+        <dd>
+            <span>{{userExtra.points}}</span>
+        </dd>
+        <dt><span>Level</span></dt>
+        <dd>
+            <span>{{userExtra.level}}</span>
+        </dd>
+        <dt><span>Number Of Ratings</span></dt>
+        <dd>
+            <span>{{userExtra.numberOfRatings}}</span>
+        </dd>
+        <dt><span>Number Of Reviews</span></dt>
+        <dd>
+            <span>{{userExtra.numberOfReviews}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'user-extra-chartbusters/'+ userExtra.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

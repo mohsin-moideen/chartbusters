@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datePublished",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "reviewBody",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180306164415",
+    "entityTableName": "review",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "chartbusters"
+}
